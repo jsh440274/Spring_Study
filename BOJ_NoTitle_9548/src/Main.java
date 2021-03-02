@@ -8,6 +8,7 @@ public class Main {
         int T = Integer.parseInt(br.readLine());
 
         while (T != 0) {
+            T--;
             String S = br.readLine();
             String line = br.readLine();
             while (!line.equals("END")) {
@@ -24,13 +25,14 @@ public class Main {
                 } else {
                     int start = Integer.parseInt(oper[1]);
                     int end = Integer.parseInt(oper[2]) + 1;
-                    System.out.println(S.substring(start, end));
-//                    bw.write(S.substring(start, end) + "\n");
-//                    bw.write(T + "\n");
+                    bw.write(S, start, end);
+                    bw.newLine();
+                    bw.flush();
                 }
                 line = br.readLine();
             }
-            T--;
         }
+        br.close();
+        bw.close();
     }
 }
